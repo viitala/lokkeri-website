@@ -11219,3 +11219,10 @@ html {
   }
 }
 /*-----Scrollbar End-----*/
+  /* Custom: Masthead header title responsive fix */
+  @media (max-width: 767px) {
+    .masthead h1 {
+      font-size: 2.1rem !important;
+      word-break: break-word;
+    }
+  }
