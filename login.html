@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sisäänkirjautuminen</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; background-color: #f8f9fa; }
+        .login-container { max-width: 400px; padding: 20px; }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2 class="text-center mb-4">Syötä salasana päästäksesi sivustolle</h2>
+        <form id="loginForm" class="needs-validation" novalidate>
+            <div class="mb-3">
+                <label for="password" class="form-label">Salasana</label>
+                <input type="password" class="form-control" id="password" required>
+                <div class="invalid-feedback">Salasana on pakollinen.</div>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Kirjaudu</button>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const correctPassword = 'lokkeri';
+        const form = document.getElementById('loginForm');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const input = document.getElementById('password').value;
+            if (input === correctPassword) {
+                sessionStorage.setItem('authenticated', 'true'); // Tallenna autentikointitila
+                window.location.href = 'index.html'; // Ohjaa index.html-sivulle
+            } else {
+                alert('Väärä salasana! Kokeile uudelleen.');
+                form.classList.add('was-validated');
+            }
+        });
+
+        // Estä pääsy ilman lomakkeen lähetystä
+        document.addEventListener('DOMContentLoaded', () => {
+            if (sessionStorage.getItem('authenticated')) {
+                window.location.href = 'index.html'; // Ohjaa suoraan, jos jo autentikoitu
+            } else {
+                form.querySelector('input').focus();
+            }
+        });
+    </script>
+</body>
+</html>
