@@ -1,0 +1,20 @@
+{
+  "redirects": [
+    {
+      "from": "/index.html",
+      "to": "/",
+      "statusCode": 301
+    },
+    {
+      "from": "/*",
+      "to": "/index.html",
+      "statusCode": 200
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
+}
