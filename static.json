@@ -1,8 +1,19 @@
 {
+  "version": 1,
   "redirects": [
     {
       "from": "/index.html",
       "to": "/",
+      "statusCode": 301
+    },
+    {
+      "from": "/login.html",
+      "to": "/login",
+      "statusCode": 301
+    },
+    {
+      "from": "/tietosuojas.html",
+      "to": "/tietosuojas",
       "statusCode": 301
     },
     {
@@ -15,6 +26,22 @@
     {
       "src": "/(.*)",
       "dest": "/index.html"
+    },
+    {
+      "src": "/login",
+      "dest": "/login.html"
+    },
+    {
+      "src": "/tietosuojas",
+      "dest": "/tietosuojas.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {"key": "Cache-Control", "value": "public, max-age=31536000"}
+      ]
     }
   ]
 }
