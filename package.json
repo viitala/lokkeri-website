@@ -1,0 +1,25 @@
+{
+  "name": "lokkeri-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/viitala/lokkeri-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/viitala/lokkeri-website/issues"
+  },
+  "homepage": "https://github.com/viitala/lokkeri-website#readme",
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "node-mailjet": "^6.0.9"
+  }
+}
