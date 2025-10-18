@@ -1,25 +1,17 @@
 {
   "name": "lokkeri-website",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "main": "api/contact.js",
   "scripts": {
+    "start": "node api/contact.js",
+    "dev": "node api/contact.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/viitala/lokkeri-website.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/viitala/lokkeri-website/issues"
-  },
-  "homepage": "https://github.com/viitala/lokkeri-website#readme",
   "dependencies": {
     "dotenv": "^17.2.3",
-    "express": "^5.1.0",
-    "node-mailjet": "^6.0.9"
+    "express": "^4.19.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
